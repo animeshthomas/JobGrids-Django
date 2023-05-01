@@ -1,0 +1,103 @@
+{% load static %}
+
+<section class="section-hero overlay inner-page bg-image" style="background-image: url('{% static 'images/hero_1.jpg' %}');"
+  id="home-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7">
+        <h1 class="text-white font-weight-bold">
+{% for job in a %}
+            {% if forloop.first %}
+        {% if job.category == '1' %}
+              Technical Support
+          {% elif job.category == '2'%}
+              Business Development
+          {% elif job.category == '3'%}
+              Real Estate Business
+            {% elif job.category == '4'%}
+             Share Market Analysis
+            {% elif job.category == '5'%}
+            Finance and Banking Services
+            {% elif job.category == '6'%}
+            IT & Networking Services
+            {% elif job.category == '7'%}
+            Restaurant Services
+            {% elif job.category == '8' %}
+            Defense and Fire Services
+            {% else %}
+              No Jobs Available
+          {% endif %}{% endif %}
+          {% endfor %}
+          </h1>
+        <div class="custom-breadcrumbs">
+          <a href="#">Home</a> <span class="mx-2 slash">/</span>
+          <a href="#">User Home</a> <span class="mx-2 slash">/</span> {% if a %}
+          <span class="text-white"><strong>{% for job in a %}
+            {% if forloop.first %}
+          {% if job.category == '1' %}
+              Technical Support
+          {% elif job.category == '2'%}
+              Business Development
+          {% elif job.category == '3'%}
+              Real Estate Business
+            {% elif job.category == '4'%}
+             Share Market Analysis
+            {% elif job.category == '5'%}
+            Finance and Banking Services
+            {% elif job.category == '6'%}
+            IT & Networking Services
+            {% elif job.category == '7'%}
+            Restaurant Services
+            {% elif job.category == '8' %}
+            Defense and Fire Services
+              {% else %}
+              No Jobs Available
+          {% endif %}{% endif %}
+          {% endfor %}</strong></span>
+            {% else %}
+      No results found.
+{% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="ajax_listing_paginattion" class="site-section services-section bg-light block__62849" id="next-section">
+  <div class="container">
+ {% if a %}
+    <div class="row">
+
+      {% for job in a %}
+      <div class="col-6 col-md-6 col-lg-4 mb-4 mb-lg-5">
+        <a href="/singlee/{{job.jid}}" class="block__16443 min-h text-center d-block">
+          <span class="custom-icon mx-auto"><span class="icon-magnet d-block"></span></span>
+          <h3>{{ job.title }}</h3>
+          <ul class="job-listing-meta list-unstyled pl-3 mb-0">
+            <li class="menu-fix mb-2">
+
+              <span class="badge badge-primary">
+                {{ job.type }}
+              </span>
+              </li>
+            <li class="badge badge-secondary menu-fix mb-2"> {{ job.location }} </li>
+
+          </ul>
+          <span class="badge badge-primary">
+
+          {{ job.reqirement }}
+               </span>
+          <li class="badge badge-secondary menu-fix mb-2"> {{ job.salary }}</li>
+
+        </a>
+      </div>
+      {% endfor %}
+
+    </div>
+{% else %}
+      <p><b>No results found.</b></p>
+{% endif %}
+
+  </div>
+</section>
+

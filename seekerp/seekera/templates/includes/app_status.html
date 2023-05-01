@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include 'portal/head.html' %}
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<section class="section-hero overlay inner-page bg-image" style="background-image: url('{% static 'images/hero_1.jpg' %}');"
+  id="home-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7">
+        <h1 class="text-white font-weight-bold">Application Status</h1>
+        <div class="custom-breadcrumbs">
+          <a href="#">Home</a> <span class="mx-2 slash">/</span>
+          <a href="#">User Home</a> <span class="mx-2 slash">/</span>
+          <span class="text-white"><strong>Application Status</strong></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="ajax_listing_paginattion" class="site-section">
+  <div class="container">
+    <ul id="job" class="job-listings mb-5">
+      {% for job in a %}<br>
+      <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
+        <a href="singlee/{{job.jid}}"></a>
+        <div class="job-listing-logo">
+          {% if job.status == 'Selected' %}
+        <img src="https://cdn.dribbble.com/users/147386/screenshots/5315437/success-tick-dribbble.gif" alt="Selected" class="img-fluid">
+      {% elif job.status == 'Rejected' %}
+        <img src="https://cdn.dribbble.com/users/251873/screenshots/9388228/error-img.gif" alt="Rejected" class="img-fluid">
+      {% else %}
+        <img src="https://cdn-images-1.medium.com/max/1600/1*npF_FS9wgA0QXHbOt6wrNg.gif" alt="Default" class="img-fluid">
+      {% endif %}
+        </div>
+
+        <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">
+          <div class="job-listing-position custom-width w-50 mb-3 mb-sm-0">
+            <h2>{{ job.title }}</h2>
+            <strong>{{ job.cname }}</strong>
+          </div>
+          <div class="job-listing-location mb-3 mb-sm-0 custom-width w-25">
+            <span class="icon-room"></span> {{ job.cname }}
+          </div>
+          <div class="job-listing-meta">
+            <span class="badge badge-success">{{ job.status }}<br>
+          </div>
+        </div>
+
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+</body>
+</html>

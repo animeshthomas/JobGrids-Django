@@ -1,0 +1,54 @@
+{% load static %}
+
+<section class="section-hero overlay inner-page bg-image" style="background-image: url('{% static 'images/hero_1.jpg' %}');"
+  id="home-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7">
+        <h1 class="text-white font-weight-bold">Jobs</h1>
+        <div class="custom-breadcrumbs">
+          <a href="">Home</a> <span class="mx-2 slash">/Search/</span>
+          <span class="text-white"><strong>Results</strong></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="ajax_listing_paginattion" class="site-section services-section bg-light block__62849" id="next-section">
+  <div class="container">
+  {% if results %}
+    <div class="row">
+      {% for job in results %}
+      <div class="col-6 col-md-6 col-lg-4 mb-4 mb-lg-5">
+        <a href="/single/{{job.jid}}/{{job.category}}/" class="block__16443 min-h text-center d-block">
+          <span class="custom-icon mx-auto"><span class="icon-magnet d-block"></span></span>
+          <h3>{{ job.title }}</h3>
+          <ul class="job-listing-meta list-unstyled pl-3 mb-0">
+            <li class="menu-fix mb-2">
+
+              <span class="badge badge-primary">
+                {{ job.type }}
+              </span>
+              </li>
+            <li class="badge badge-secondary menu-fix mb-2"> {{ job.location }} </li>
+
+          </ul>
+          <span class="badge badge-primary">
+
+          {{ job.reqirement }}
+               </span>
+          <li class="badge badge-secondary menu-fix mb-2"> {{ job.salary }}</li>
+<i class="fa fa-trash-alt"></i>
+        </a>
+      </div>
+      {% endfor %}
+      {% else %}
+      <p><b>No results found.</b></p>
+{% endif %}
+    </div>
+
+
+  </div>
+</section>
+

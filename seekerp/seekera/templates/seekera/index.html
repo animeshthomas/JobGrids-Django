@@ -1,0 +1,579 @@
+{% load static %}
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+
+<head>
+    {% include 'portal/head.html' %}
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>JobGrids</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'seekera/jobgrid/assets/images/logo/logo.svg' %}" />
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- Web Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- ========================= CSS here ========================= -->
+    <link rel="stylesheet" href="{% static 'seekera/jobgrid/assets/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'seekera/jobgrid/assets/css/LineIcons.2.0.css' %}" />
+    <link rel="stylesheet" href="{% static 'seekera/jobgrid/assets/css/animate.css' %}" />
+    <link rel="stylesheet" href="{% static 'seekera/jobgrid/assets/css/tiny-slider.css' %}" />
+    <link rel="stylesheet" href="{% static 'seekera/jobgrid/assets/css/glightbox.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'seekera/jobgrid/assets/css/main.css' %}" />
+
+</head>
+<style>
+    a {
+    color: #89ba16;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+</style>
+<body>
+    <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+
+    <div id="loading-area"></div>
+
+    <!-- Start Header Area -->
+    <header class="header">
+        <div class="navbar-area">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-12">
+                        <nav class="navbar navbar-expand-lg">
+                            <a class="navbar-brand logo" href="">
+                                <img class="logo1" src="{% static 'seekera/jobgrid/assets/images/logo/logo.svg' %}" alt="Logo" />
+                            </a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                <ul id="nav" class="navbar-nav ml-auto">
+                                    <li class="nav-item">
+                                        <a class="" href="/"><b>Home</b></a>
+                                    </li>
+<!--                                    <li class="nav-item"><a href="#">Pages</a>-->
+<!--                                        <ul class="sub-menu">-->
+<!--                                            <li><a href="about-us.html">About Us</a></li>-->
+<!--                                        </ul>-->
+<!--                                    </li>-->
+<!--                                    <li class="nav-item"><a href="#">Candidates</a></li>-->
+<!--                                    <li class="nav-item"><a href="admin">Admin Panel </a></li>-->
+<!--                                    <li class="nav-item"><a href="edit-admin">Edit </a></li>-->
+                                    <li class="nav-item"><a href="/alljobs"><b>Jobs </b></a></li>
+
+                                    <li class="nav-item"><a href="/alltesti"><b>Reviews </b></a></li>
+                                    <li class="nav-item"><a href="{% url 'contact' %}"><b>Contact</b></a></li>
+<!--                                    <li class="nav-item"><a href="home">homepages</a></li>-->
+
+                                </ul>
+                            </div>
+                            <!-- navbar collapse -->
+                            <div class="button">
+                                <a href="javacript:" data-toggle="modal" data-target="#login" class="login"><i
+                                        class="fas fa-lock"></i><b>Login</b></a>
+                                <a href="javacript:" data-toggle="modal" data-target="#signup" class="btn"><b><i
+                                        class="fas fa-user-plus"></i>&nbsp;Sign Up</b></a>
+                            </div>
+                        </nav>
+                        <!-- navbar -->
+                    </div>
+                </div>
+                <!-- row -->
+            </div>
+            <!-- container -->
+        </div>
+        <!-- navbar area -->
+    </header>
+    <!-- End Header Area -->
+
+    <!-- Start Hero Area -->
+    <section class="hero-area">
+        <!-- Single Slider -->
+        <div class="hero-inner">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-lg-6 co-12">
+                        <div class="inner-content">
+                            <div class="hero-text">
+                                <h1 class="wow fadeInUp" data-wow-delay=".3s">Find Your Career <br>to Make a Better Life
+                                </h1>
+                                <p class="wow fadeInUp" data-wow-delay=".5s">
+                                </p>
+                            </div>
+                            <div class="job-search-wrap-two mt-50 wow fadeInUp" data-wow-delay=".7s">
+                                <div class="job-search-form">
+                                    <form method="GET" action="{% url 'search_results' %}">
+                                        <!-- Single Field Item Start  -->
+                                        <div class="single-field-item keyword">
+                                            <label for="title">What</label>
+                                            <input id="keyword" placeholder="What jobs you want?" name="title"
+                                                type="text" >
+                                              <div id="title-suggestions" class="autocomplete-suggestions"></div>
+                                        </div>
+                                        <!-- Single Field Item End  -->
+                                        <!-- Single Field Item Start  -->
+                                        <div class="single-field-item location">
+                                            <label for="location">Where</label>
+                                            <input id="location" class="input-field input-field-location"
+                                                placeholder="Location" name="location" type="text" >
+                                        </div>
+                                        <!-- Single Field Item End  -->
+                                        <div class="submit-btn">
+                                            <button class="btn" type="submit">Search</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="trending-keywords mt-30">
+                                    <div class="keywords style-two">
+                                        <span class="title">Popular Keywords:</span>
+                                        <ul>
+                                            <li><a href="#">Administrative</a></li>
+                                            <li><a href="#">Android</a></li>
+                                            <li><a href="#">app</a></li>
+                                            <li><a href="#">ASP.NET</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#title').on('input', function() {
+                var term = $(this).val();
+                if (term.length > 0) {
+                    $.getJSON('{% url "get_suggestions" %}', {term: term}, function(data) {
+                        $('#title-suggestions').empty();
+                        if (data.length > 0) {
+                            for (var i = 0; i < data.length; i++) {
+                                $('#title-suggestions').append('<div class="autocomplete-suggestion">' + data[i] + '</div>');
+                            }
+                            $('.autocomplete-suggestion').on('click', function() {
+                                $('#title').val($(this).text());
+                                $('#title-suggestions').empty();
+                            });
+                        }
+                    });
+                } else {
+                    $('#title-suggestions').empty();
+                }
+            });
+        });
+    </script>
+                    <div class="col-lg-6 co-12">
+                        <div class="hero-video-head wow fadeInRight" data-wow-delay=".5s">
+                            <div class="video-inner">
+                                <img src="{% static 'seekera/jobgrid/assets/images/hero/hero-image.png' %}" alt="#">
+                                <a href="" class="glightbox hero-video"><i
+                                        class="lni lni-play"></i></a>
+                                <!-- Video Animation -->
+                                <div class="promo-video">
+                                    <div class="waves-block">
+                                        <div class="waves wave-1"></div>
+                                        <div class="waves wave-2"></div>
+                                        <div class="waves wave-3"></div>
+                                    </div>
+                                </div>
+                                <!--/ End Video Animation -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/ End Single Slider -->
+    </section>
+    <!--/ End Hero Area -->
+
+    <!-- Start Apply Process Area -->
+    <section class="apply-process section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-12">
+                    <div class="process-item">
+                        <i class="lni lni-user"></i>
+                        <h4>Register Your Account</h4>
+
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-12">
+                    <div class="process-item">
+                        <i class="lni lni-book"></i>
+                        <h4>Upload Your Resume</h4>
+
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-12">
+                    <div class="process-item">
+                        <i class="lni lni-briefcase"></i>
+                        <h4>Apply for Dream Job</h4>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--/ End Apply Process Area -->
+{% include 'includes/index.html' %}
+   <!-- Start Job Category Area -->
+    <section class="job-category section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title">
+                        <span class="wow fadeInDown" data-wow-delay=".2s">Job Category</span>
+                        <h2 class="wow fadeInUp" data-wow-delay=".4s">Choose Your Desire Category</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="cat-head">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <a href="categor/1/" class="single-cat wow fadeInUp" data-wow-delay=".2s">
+                            <div class="icon">
+                                <i class="lni lni-cog"></i>
+                            </div>
+                            <h3>Technical<br> Support</h3>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <a href="categor/2/" class="single-cat wow fadeInUp" data-wow-delay=".4s">
+                            <div class="icon">
+                                <i class="lni lni-layers"></i>
+                            </div>
+                            <h3>Business<br> Development</h3>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <a href="categor/3/" class="single-cat wow fadeInUp" data-wow-delay=".6s">
+                            <div class="icon">
+                                <i class="lni lni-home"></i>
+                            </div>
+                            <h3>Real Estate<br> Business</h3>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <a href="categor/4/" class="single-cat wow fadeInUp" data-wow-delay=".8s">
+                            <div class="icon">
+                                <i class="lni lni-search"></i>
+                            </div>
+                            <h3>Share Market<br> Analysis</h3>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <a href="categor/5/" class="single-cat wow fadeInUp" data-wow-delay=".2s">
+                            <div class="icon">
+                                <i class="lni lni-investment"></i>
+                            </div>
+                            <h3>Finance & Banking <br> Service</h3>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <a href="categor/6/" class="single-cat wow fadeInUp" data-wow-delay=".4s">
+                            <div class="icon">
+                                <i class="lni lni-cloud-network"></i>
+                            </div>
+                            <h3>IT & Networing <br> Sevices</h3>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <a href="categor/7/" class="single-cat wow fadeInUp" data-wow-delay=".6s">
+                            <div class="icon">
+                                <i class="lni lni-restaurant"></i>
+                            </div>
+                            <h3>Restaurant <br> Services</h3>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <a href="categor/8/" class="single-cat wow fadeInUp" data-wow-delay=".8s">
+                            <div class="icon">
+                                <i class="lni lni-fireworks"></i>
+                            </div>
+                            <h3>Defence & Fire <br> Service</h3>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+    <!-- /End Job Category Area -->
+<section class="job-category section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="section-title">
+          <a href="/alltesti"><span class="wow fadeInDown" data-wow-delay=".2s">View All Testimonials</span></a>
+          <h2 class="wow fadeInUp" data-wow-delay=".4s">Featured Testimonials</h2>
+        </div>
+      </div>
+    </div>
+{% include 'includes/reviews.html' %}
+
+    <div class="modal fade form-modal" id="login" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog max-width-px-840 position-relative">
+            <button type="button"
+                class="circle-32 btn-reset bg-white pos-abs-tr mt-md-n6 mr-lg-n6 focus-reset z-index-supper"
+                data-dismiss="modal"><i class="lni lni-close"></i></button>
+            <div class="login-modal-main">
+                <div class="row no-gutters">
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="heading">
+                                <h3>Login From Here</h3>
+                                <p>Log in to continue your account <br> and explore new jobs.</p>
+                            </div>
+
+                                    <form role="form"   method="post" name="form1">
+                                <div class="form-group">{% csrf_token %}
+                                    <label for="email" class="label">E-mail</label>
+                                    <input type="email" name="email" class="form-control" placeholder="example@gmail.com" id="email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="password" class="label">Password</label>
+                                    <div class="position-relative">
+                                        <input type="password" name="password" class="form-control" id="password"
+                                            placeholder="Enter password">
+                                    </div>
+                                </div>
+                                <div class="form-group d-flex flex-wrap justify-content-between">
+                                    <!-- Default checkbox -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value=""
+                                            id="flexCheckDefault" />
+                                        <label class="form-check-label" for="flexCheckDefault">Remember password</label>
+                                    </div>
+                                    <a href="/admin" class="font-size-3 text-dodger line-height-reset"><font color="blue">Login as Admin?</font></a>
+                                </div>
+                                <div class="form-group mb-8 button">
+                                    <button class="btn ">Log in
+                                    </button>
+
+                                </div>
+                                <p class="text-center create-new-account">Don’t have an account? <a href="#">Create a free account</a></p>
+                                    </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- End Login Modal -->
+
+    <!-- Signup Modal -->
+    <div class="modal fade form-modal" id="signup" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog max-width-px-840 position-relative">
+            <button type="button"
+                class="circle-32 btn-reset bg-white pos-abs-tr mt-md-n6 mr-lg-n6 focus-reset z-index-supper"
+                data-dismiss="modal"><i class="lni lni-close"></i></button>
+            <div class="login-modal-main">
+                <div class="row no-gutters">
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="heading">
+                                <h3>Create a free Account <br> Today</h3>
+                                <b>Create your account to continue <br> and explore new jobs.</b>
+                            </div>
+                            <div class="social-login">
+                                <ul>
+                                    <li><a class="linkedin" href="/createcompany"><i class="fa fa-briefcase"></i>Signup As Job Provider</a></li>
+                                    <li><a class="google" href="/createresume"><i class="lni lni-user"></i>Signup As Job Seeker</a></li>
+                                </ul>
+                            </div>
+<!--                            <div class="or-devider">-->
+<!--                                <span>Or</span>-->
+<!--                            </div>-->
+
+<!--                                <div class="form-group d-flex flex-wrap justify-content-between">-->
+<!--                                    &lt;!&ndash; Default checkbox &ndash;&gt;-->
+<!--                                    <div class="form-check">-->
+<!--                                        <input class="form-check-input" type="checkbox" value="">-->
+<!--                                        <label class="form-check-label" for="flexCheckDefault">Agree to the <a-->
+<!--                                                href="#">Terms & Conditions</a></label>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="form-group mb-8 button">-->
+<!--                                    <button class="btn ">Sign Up-->
+<!--                                    </button>-->
+<!--                                </div>-->
+<!--                            </form>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Signup Modal -->
+
+    <!-- Start Footer Area -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row align-items-center justify-content-center">
+
+                    </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Start Middle Top -->
+        <div class="footer-middle">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <!-- Single Widget -->
+                        <div class="f-about single-footer">
+                            <div class="logo">
+                                <a href="#"><img src="{% static 'seekera/jobgrid/assets/images/logo/logo.svg' %}" alt="Logo"></a>
+                            </div>
+                            <p>With the Open To Work feature, you can privately tell recruiters or publicly share with the LinkedIn community that you are looking for new job opportunities.</p>
+                            <ul class="contact-address">
+                                <li><span>Address:</span> 555 Wall Street, USA, NY</li>
+                                <li><span>Email:</span> animeshthomas@gmail.com</li>
+                                <li><span>Call:</span>+91 6238166457</li>
+                            </ul>
+                            <div class="footer-social">
+                                <ul>
+                                    <li><a href="https://www.facebook.com/animesh.thomas/"><i class="lni lni-facebook-original"></i></a></li>
+                                    <li><a href="https://www.facebook.com/animesh.thomas/"><i class="lni lni-twitter-original"></i></a></li>
+                                    <li><a href="https://www.linkedin.com/in/animesh-thomas-297949258/"><i class="lni lni-linkedin-original"></i></a></li>
+                                    <li><a href="https://www.linkedin.com/in/animesh-thomas-297949258/"><i class="lni lni-pinterest"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- End Single Widget -->
+                    </div>
+                    <div class="col-lg-8 col-12">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6 col-12">
+                                <!-- Single Widget -->
+
+                                <!-- End Single Widget -->
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-12">
+                                <!-- Single Widget -->
+
+                                <!-- End Single Widget -->
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-12">
+                                <!-- Single Widget -->
+                                <div class="single-footer newsletter">
+                                    <h3>Join Our Newsletter</h3>
+                                    <p>Subscribe to get the latest jobs posted, candidates...</p>
+                                    <form action="mail/mail.php" method="get" target="_blank" class="newsletter-inner">
+                                        <input name="EMAIL" placeholder="Your email address" class="common-input"
+                                            onfocus="this.placeholder = ''"
+                                            onblur="this.placeholder = 'Your email address'" required="" type="email">
+                                        <div class="button">
+                                            <button class="btn">Subscribe Now! <span class="dir-part"></span></button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <!-- End Single Widget -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/ End Footer Middle -->
+        <!-- Start Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="inner">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-12">
+                            <div class="left">
+                                <p>Designed and Developed by<a href="https://www.instagram.com/animesh.thomas/" rel="nofollow" target="_blank">Animesh Thomas</a></p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-12">
+                            <div class="right">
+                                <ul>
+                                    <li><a href="#">Terms of use</a></li>
+                                    <li><a href="#"> Privacy Policy</a></li>
+                                    <li><a href="#">Faq</a></li>
+                                    <li><a href="#">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Footer Middle -->
+    </footer>
+    <!--/ End Footer Area -->
+
+    <!-- ========================= scroll-top ========================= -->
+    <a href="#" class="scroll-top btn-hover">
+        <i class="lni lni-chevron-up"></i>
+    </a>
+
+    <!-- ========================= JS here ========================= -->
+    <script src="{% static 'seekera/jobgrid/assets/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'seekera/jobgrid/assets/js/wow.min.js' %}"></script>
+    <script src="{% static 'seekera/jobgrid/assets/js/tiny-slider.js' %}"></script>
+    <script src="{% static 'seekera/jobgrid/assets/js/glightbox.min.js' %}"></script>
+    <script src="{% static 'seekera/jobgrid/assets/js/main.js' %}"></script>
+    <script type="text/javascript">
+        //====== Clients Logo Slider
+        tns({
+            container: '.client-logo-carousel',
+            slideBy: 'page',
+            autoplay: true,
+            autoplayButtonOutput: false,
+            mouseDrag: true,
+            gutter: 15,
+            nav: false,
+            controls: false,
+            responsive: {
+                0: {
+                    items: 1,
+                },
+                540: {
+                    items: 2,
+                },
+                768: {
+                    items: 3,
+                },
+                992: {
+                    items: 4,
+                },
+                1170: {
+                    items: 6,
+                }
+            }
+        });
+        //========= glightbox
+        GLightbox({
+            'href': 'https://www.youtube.com/watch?v=GaLWuwtSb1A',
+            'type': 'video',
+            'source': 'youtube', //vimeo, youtube or local
+            'width': 900,
+            'autoplayVideos': true,
+        });
+    </script>
+</body>
+
+</html>

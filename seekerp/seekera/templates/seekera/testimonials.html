@@ -1,0 +1,57 @@
+{% extends 'seekera/base.html' %}
+{% load static %}
+{% block title %}
+{% endblock %}
+{% block background %} {% endblock %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+    <style>
+.card-body {
+  height: 200px;
+}
+b, strong {
+    font-weight: bolder;
+}
+.text-muted {
+    --mdb-text-opacity: 1;
+    color: #757575!important;
+}
+.fa-solid, .fas {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+}
+.fa-sm {
+    font-size: .875em;
+    line-height: .07143em;
+    vertical-align: .05357em;
+}
+li {
+    text-align: -webkit-match-parent;
+}
+.text-warning {
+    color: #2042e3 !important;
+}
+</style>
+</style>
+    <body>
+    <section class="section-hero overlay inner-page bg-image"
+  style="background-image: url('{% static 'images/hero_1.jpg' %}');" id="home-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7">
+                <h1 class="text-white font-weight-bold">Testimonials</h1>
+        <div class="custom-breadcrumbs">
+          <a href="">Home</a> <span class="mx-2 slash">/</span>
+          <a href="">Reviews</a> <span class="mx-2 slash"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% include 'includes/reviews.html' %}
+    </body>
+{% endblock %}

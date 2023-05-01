@@ -1,0 +1,140 @@
+<head>
+<!-- Font Awesome -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+  rel="stylesheet"
+/>
+<!-- MDB -->
+
+</head>
+<style>
+.card-body {
+  height: 500px;
+}
+b, strong {
+    font-weight: bolder;
+}
+.text-muted {
+    --mdb-text-opacity: 1;
+    color: #757575!important;
+}
+.fa-solid, .fas {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+}
+.fa-sm {
+    font-size: .875em;
+    line-height: .07143em;
+    vertical-align: .05357em;
+}
+li {
+    text-align: -webkit-match-parent;
+}
+.text-warning {
+    color: #2042e3 !important;
+}
+  .fade-up {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeUp 1s ease-in-out forwards;
+  }
+
+  @keyframes fadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+</style>
+<body>
+  <section class="fade-up">
+    <div id="carouselMultiItemExample" class="carousel slide carousel-dark text-center" data-mdb-ride="carousel">
+      <!-- Carousel wrapper -->
+      <div class="carousel-inner py-4 fade-up">
+        <div class="row" >
+          {% for i in b %}
+            {% if i.usertype == 'Job Seeker' %}
+          <div class="col-lg-4">
+            <div class="card mb-4" data-wow-delay=".2s">
+              <div class="card-body" >
+                <img class="rounded-circle shadow-1-strong mb-4" src="{{i.seeker.photo.url}}" alt="avatar" style="width: 150px;" />
+                <h5 class="mb-3" ><b>{{i.seeker.name}}</b></h5>
+                <p><b>Job Seeker</b></p>
+                <p class="text-muted"><i class="fas fa-quote-left pe-2"></i><b>{{i.title}}</b><i class="fas fa-quote-right pe-2"></i></p>
+              </div>
+              <ul class="list-unstyled d-flex justify-content-center text-warning mb-0">
+                {% if i.stars == 1 %}
+                    <li><i class="fas fa-star fa-sm"></i></li>
+                {% elif i.stars == 2 %}
+                    <li><i class="fas fa-star fa-sm"></i></li>
+                    <li><i class="fas fa-star fa-sm"></i></li>
+                {% elif i.stars == 3 %}
+                    <li><i class="fas fa-star fa-sm"></i></li>
+                    <li><i class="fas fa-star fa-sm"></i></li>
+                    <li><i class="fas fa-star fa-sm"></i></li>
+                {% elif i.stars == 4 %}
+                    <li><i class="fas fa-star fa-sm"></i></li>
+                    <li><i class="fas fa-star fa-sm"></i></li>
+                    <li><i class="fas fa-star fa-sm"></i></li>
+                    <li><i class="fas fa-star fa-sm"></i></li>
+                {% elif i.stars == 5 %}
+                    <li><i class="fas fa-star fa-sm"></i></li>
+                    <li><i class="fas fa-star fa-sm"></i></li>
+                    <li><i class="fas fa-star fa-sm"></i></li>
+                    <li><i class="fas fa-star fa-sm"></i></li>
+                    <li><i class="fas fa-star fa-sm"></i></li>
+                {% endif %}
+            </ul>
+                              <i><b>{{i.created_at}}</b></i>
+            </div>
+          </div>
+            {% else %}
+                      <div class="col-lg-4">
+            <div class="card mb-4" data-wow-delay=".2s">
+              <div class="card-body" >
+                <img class="rounded-circle shadow-1-strong mb-4" src="{{i.provider.photo.url}}" alt="avatar" style="width: 150px;" />
+                <h5 class="mb-3" ><b>{{i.provider.cname}}</b></h5>
+                <p><b>Job Provider</b></p>
+                <p class="text-muted"><i class="fas fa-quote-left pe-2"></i><b>{{i.title}}<i class="fas fa-quote-right pe-2"></i></b></p>
+              </div>
+              <ul class="list-unstyled d-flex justify-content-center text-warning mb-0">
+                {% if i.stars == 1 %}
+                    <li><i class="fas fa-star fa-sm"></i></li>
+                {% elif i.stars == 2 %}
+                    <li><i class="fas fa-star fa-sm"></i></li>
+                    <li><i class="fas fa-star fa-sm"></i></li>
+                {% elif i.stars == 3 %}
+                    <li><i class="fas fa-star fa-sm"></i></li>
+                    <li><i class="fas fa-star fa-sm"></i></li>
+                    <li><i class="fas fa-star fa-sm"></i></li>
+                {% elif i.stars == 4 %}
+                    <li><i class="fas fa-star fa-sm"></i></li>
+                    <li><i class="fas fa-star fa-sm"></i></li>
+                    <li><i class="fas fa-star fa-sm"></i></li>
+                    <li><i class="fas fa-star fa-sm"></i></li>
+                {% elif i.stars == 5 %}
+                    <li><i class="fas fa-star fa-sm"></i></li>
+                    <li><i class="fas fa-star fa-sm"></i></li>
+                    <li><i class="fas fa-star fa-sm"></i></li>
+                    <li><i class="fas fa-star fa-sm"></i></li>
+                    <li><i class="fas fa-star fa-sm"></i></li>
+                {% endif %}
+            </ul>
+              <i><b>{{i.created_at}}</b></i>
+            </div>
+          </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+      <!-- Controls -->
+    </div>
+  </div>
+</section>
+</body>

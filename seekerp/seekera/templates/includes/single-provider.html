@@ -1,0 +1,82 @@
+{% load static %}
+</head>
+<style>
+  .border {
+    border: 0px solid #dee2e6 !important;
+}
+</style>
+<body>
+<section class="section-hero overlay inner-page bg-image"
+  style="background-image: url('{% static 'images/hero_1.jpg' %}');" id="home-section">
+  {% for job in a %}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7">
+        <h1 class="text-white font-weight-bold">{{ job.title }}</h1>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% for job in a %}
+
+<section class="site-section">
+      <div class="container">
+        <div class="row align-items-center mb-5">
+          <div class="col-lg-8 mb-4 mb-lg-0">
+            <div class="d-flex align-items-center">
+              <div class="border p-2 d-inline-block mr-3 rounded job-image" style="width: 150px; height: 100px;">
+  <a href="/view_deatails/{{job.pid}}/"><img src="{{job.cname.photo.url}}" alt="Image" style="width: 100%; height: 100%; object-fit: cover;"></a>
+</div>
+              <div>
+                <h2>{{job.title}}</h2>
+                <div>
+                  <span class="ml-0 mr-2 mb-2"><span class="icon-briefcase mr-2"></span>{{job.cname}}</span>
+                  <span class="m-2"><span class="icon-room mr-2"></span>{{job.location}}</span>
+                  <span class="m-2"><span class="icon-clock-o mr-2"></span><span class="text-primary">{{job.type}}</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="bg-light p-3 border rounded mb-4">
+              <h3 class="text-primary  mt-3 h5 pl-3 mb-3 ">Job Summary</h3>
+              <ul class="list-unstyled pl-3 mb-0">
+                <li class="mb-2"><strong class="text-black">Published on:</strong>{{ job.timestamp|date:"d M Y" }}</li>
+                <li class="mb-2"><strong class="text-black">Employment Status:</strong>{{job.type}}</li>
+                <li class="mb-2"><strong class="text-black">Experience:</strong> 2 to 3 year(s)</li>
+                <li class="mb-2"><strong class="text-black">Job Location:</strong>{{job.location}}</li>
+                <li class="mb-2"><strong class="text-black">Qualification:</strong>{{job.reqirement}}</li>
+                <li class="mb-2"><strong class="text-black">Salary:</strong>{{job.salary}}</li>
+                  <li class="mb-2"><strong class="text-black">Application Deadline:</strong> {{ job.deadline|date:"d M Y" }}
+                <li class="mb-2"><strong class="text-black">Gender:</strong> Any</li>
+              </ul>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                {% if job.status == 'Open' %}
+                <a href="/change/{{job.jid}}/" class="btn btn-block btn-primary btn-md">Close Applications</a>
+                {% elif job.status == 'Closed' %}
+                <a href="/start/{{job.jid}}/" class="btn btn-block btn-primary btn-md">Open Applications</a>
+                {% endif %}
+              </div>
+
+              <div class="col-6">
+                <a href="/viewapplicants/{{job.jid}}/" class="btn btn-block btn-primary btn-md">View Applicants</a>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="mb-5">
+
+              <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="icon-align-left mr-3"></span>Job Description</h3>
+              <p>{{job.des}}</p>
+            </div>
+{% endfor %}

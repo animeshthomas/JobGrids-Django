@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+{% load static %}
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'seekera/jobgrid/assets/images/logo/logo.svg' %}" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    {% include 'portal/head.html' %}
+    <!-- ========================= CSS here ========================= -->
+    <link rel="stylesheet" href="{% static 'seekera/jobgrid/assets/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'seekera/jobgrid/assets/css/LineIcons.2.0.css' %}" />
+    <link rel="stylesheet" href="{% static 'seekera/jobgrid/assets/css/animate.css' %}" />
+    <link rel="stylesheet" href="{% static 'seekera/jobgrid/assets/css/tiny-slider.css' %}" />
+    <link rel="stylesheet" href="{% static 'seekera/jobgrid/assets/css/glightbox.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'seekera/jobgrid/assets/css/main.css' %}" />
+
+
+</head>
+<style>
+    .navbar-nav .nav-item a:hover, .navbar-nav .nav-item a.active {
+    color: #eee;
+}
+.navbar-nav .nav-item a {
+    font-size: 14px;
+    font-weight: 500;
+    color: #ddd;
+    -webkit-transition: all 0.3s ease-out 0s;
+    transition: all 0.3s ease-out 0s;
+    padding: 30px 0;
+    position: relative;
+    text-transform: capitalize;
+}
+</style>
+</head>
+<body {% block background %}{% endblock %}>
+ <!-- Start Header Area -->
+    <header class="header">
+        <div class="navbar-area">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-12">
+                        <nav class="navbar navbar-expand-lg">
+                            <a class="navbar-brand logo" href="">
+                                <img class="logo1" src="{% static 'seekera/jobgrid/assets/images/logo/logo.svg' %}" alt="Logo" />
+                            </a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                <ul id="nav" class="navbar-nav ml-auto">
+                                    <li class="nav-item">
+                                        <a class="" href="/"><b>Home</b></a>
+                                    </li>
+                                    <li class="nav-item"><a href="#"><b>Registration</b></a>
+                                        <ul class="sub-menu">
+                                            <li class="nav-item"><a href="{% url 'company' %}"><b>Job Provider</b></a></li>
+                                            <li class="nav-item"><a href="{% url 'resume' %}"><b>Job Seeker </b></a></li>
+                                        </ul>
+                                    </li>
+<!--                                    <li class="nav-item"><a href="#">Candidates</a></li>-->
+<!--                                    <li class="nav-item"><a href="#">Employers </a></li>-->
+<!--                                    <li class="nav-item"><a href="#">Blog</a></li>-->
+                                     <li class="nav-item"><a href="/alljobs"><b>Jobs </b></a></li>
+                                    <li class="nav-item"><a href="/alltesti"><b>Reviews </b></a></li>
+                                    <li class="nav-item"><a href="{% url 'contact' %}"><b>Contact</b></a></li>
+                                    <li class="nav-item"><a href="/login2"><b>Login</b></a></li>
+                                </ul>
+                            </div>
+                            <!-- navbar collapse -->
+                        </nav>
+                        <!-- navbar -->
+                    </div>
+                </div>
+                <!-- row -->
+            </div>
+            <!-- container -->
+        </div>
+        <!-- navbar area -->
+    </header>
+    <!-- End Header Area -->
+  <!-- Login Modal -->
+    <div class="modal fade form-modal" id="login" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog max-width-px-840 position-relative">
+            <button type="button"
+                class="circle-32 btn-reset bg-white pos-abs-tr mt-md-n6 mr-lg-n6 focus-reset z-index-supper"
+                data-dismiss="modal"><i class="lni lni-close"></i></button>
+            <div class="login-modal-main">
+                <div class="row no-gutters">
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="heading">
+                                <h3>Login From Here</h3>
+                                <p>Log in to continue your account <br> and explore new jobs.</p>
+                            </div>
+<!--                            <div class="social-login">-->
+<!--                                <ul>-->
+<!--                                    <li><a class="linkedin" href="#"><i class="lni lni-linkedin-original"></i> Log in-->
+<!--                                            with LinkedIn</a></li>-->
+<!--                                    <li><a class="google" href="#"><i class="lni lni-google"></i> Log in with-->
+<!--                                            Google</a></li>-->
+<!--                                    <li><a class="facebook" href="#"><i class="lni lni-facebook-original"></i> Log in-->
+<!--                                            with Facebook</a></li>-->
+<!--                                </ul>-->
+<!--                            </div>-->
+<!--                            <div class="or-devider">-->
+<!--                                <span>Or</span>-->
+<!--                            </div>-->
+                            <form action="/">
+                                <div class="form-group">
+                                    <label for="email" class="label">E-mail</label>
+                                    <input type="email" class="form-control" placeholder="example@gmail.com" id="email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="password" class="label">Password</label>
+                                    <div class="position-relative">
+                                        <input type="password" class="form-control" id="password"
+                                            placeholder="Enter password">
+                                    </div>
+                                </div>
+                                <div class="form-group d-flex flex-wrap justify-content-between">
+                                    <!-- Default checkbox -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value=""
+                                            id="flexCheckDefault" />
+                                        <label class="form-check-label" for="flexCheckDefault">Remember password</label>
+                                    </div>
+                                    <a href="" class="font-size-3 text-dodger line-height-reset">Forget Password</a>
+                                </div>
+                                <div class="form-group mb-8 button">
+                                    <button class="btn ">Log in
+                                    </button>
+                                </div>
+                                <p class="text-center create-new-account">Don’t have an account? <a href="#">Create a free account</a></p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Login Modal -->
+
+    <!-- Signup Modal -->
+    <div class="modal fade form-modal" id="signup" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog max-width-px-840 position-relative">
+            <button type="button"
+                class="circle-32 btn-reset bg-white pos-abs-tr mt-md-n6 mr-lg-n6 focus-reset z-index-supper"
+                data-dismiss="modal"><i class="lni lni-close"></i></button>
+            <div class="login-modal-main">
+                <div class="row no-gutters">
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="heading">
+                                <h3>Create a free Account <br> Today</h3>
+                                <p>Create your account to continue <br> and explore new jobs.</p>
+                            </div>
+                            <div class="social-login">
+                                <ul>
+                                    <li><a class="linkedin" href="#"><i class="lni lni-linkedin-original"></i> Signup As Job Provider<br>(Verification Needed)</a></li>
+                                    <li><a class="google" href="/createresume"><i class="lni lni-google"></i> Signup As Job Seeker</a></li>
+                                </ul>
+                            </div>
+<!--                            <div class="or-devider">-->
+<!--                                <span>Or</span>-->
+<!--                            </div>-->
+
+<!--                                <div class="form-group d-flex flex-wrap justify-content-between">-->
+<!--                                    &lt;!&ndash; Default checkbox &ndash;&gt;-->
+<!--                                    <div class="form-check">-->
+<!--                                        <input class="form-check-input" type="checkbox" value="">-->
+<!--                                        <label class="form-check-label" for="flexCheckDefault">Agree to the <a-->
+<!--                                                href="#">Terms & Conditions</a></label>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="form-group mb-8 button">-->
+<!--                                    <button class="btn ">Sign Up-->
+<!--                                    </button>-->
+<!--                                </div>-->
+<!--                            </form>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Signup Modal -->
+ <script src="{% static 'seekera/jobgrid/assets/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'seekera/jobgrid/assets/js/wow.min.js' %}"></script>
+    <script src="{% static 'seekera/jobgrid/assets/js/tiny-slider.js' %}"></script>
+    <script src="{% static 'seekera/jobgrid/assets/js/glightbox.min.js' %}"></script>
+    <script src="{% static 'seekera/jobgrid/assets/js/main.js' %}"></script>
+ <script type="text/javascript">
+        //====== Clients Logo Slider
+        tns({
+            container: '.client-logo-carousel',
+            slideBy: 'page',
+            autoplay: true,
+            autoplayButtonOutput: false,
+            mouseDrag: true,
+            gutter: 15,
+            nav: false,
+            controls: false,
+            responsive: {
+                0: {
+                    items: 1,
+                },
+                540: {
+                    items: 2,
+                },
+                768: {
+                    items: 3,
+                },
+                992: {
+                    items: 4,
+                },
+                1170: {
+                    items: 6,
+                }
+            }
+        });
+        //========= glightbox
+        GLightbox({
+            'href': 'https://www.youtube.com/watch?v=cz4z8CyvDas',
+            'type': 'video',
+            'source': 'youtube', //vimeo, youtube or local
+            'width': 900,
+            'autoplayVideos': true,
+        });
+    </script>
+{% block body %}{% endblock %}
+</div>
+
+</body>

@@ -1,0 +1,139 @@
+{% extends 'seekera/jobproviderbase.html' %}
+{% load static %}
+{% block title %}
+{% endblock %}
+{% block background %} {% endblock %}
+{% block body %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="static/addjob/fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="static/addjob/css/owl.carousel.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="static/addjob/css/bootstrap.min.css">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="static/addjob/css/style.css">
+
+    <title>Post Job</title>
+  </head>
+  <style>
+      .btn-primary {
+    color: #fff;
+    background-color: #5b47fb;
+    border-color: #2042e3;
+}
+  </style>
+  <body>
+
+
+  <div class="d-lg-flex half">
+    <div class="bg order-1 order-md-2" style="background-image: url('static/addjob/images/bg_1.jpg');"></div>
+    <div class="contents order-2 order-md-1">
+
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-md-7 py-5">
+            <h3>Post your requirement</h3>
+            <form method="POST"  enctype="multipart/form-data">
+               {% csrf_token %}
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group first">
+                    <label for="title">Job Title</label>
+                    <input type="text" class="form-control" placeholder="e.g. Full Stack Developer" id="fname" name="title" pattern="[A-Za-z\s]{1,50}"  required>
+                  </div>
+                </div>
+                <div class="col-md-6">
+  <div class="form-group first">
+    <label for="type">Job Type</label>
+    <select class="form-control" id="type" name="type" required>
+      <option value="Full Time">Full Time</option>
+      <option value="Part Time">Part Time</option>
+    </select>
+  </div>
+</div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group first">
+                    <label for="des">Description</label>
+                    <input type="text" class="form-control" placeholder="Enter job description here" name="des" id="email" required>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group first">
+                    <label for="location">Location</label>
+                    <input type="text" class="form-control" placeholder="Eg. Bangalore" id="lname" name="location" required pattern="^[a-zA-Z,]*$">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group first">
+                    <label for="requirement">Qualification Needed</label>
+                    <input type="text" class="form-control" placeholder="e.g. UG,PG" id="lname" name="requirement" required pattern="^[a-zA-Z,]*$">
+                  </div>
+                </div>
+              </div>
+                <div class="col-md-6">
+                  <div class="form-group first">
+                    <label for="salary">Salary</label>
+                    <input type="text" class="form-control" placeholder="e.g. UG,PG" id="lname" name="salary" value="Not Disclosed" required>
+                  </div>
+                </div>
+              </div>
+             <div class="row">
+  <div class="col-md-6">
+ <div class="form-group first">
+      <label for="category">Job Category</label>
+      <select class="form-control" name="category" required>
+        <option value="1">Technical Support</option>
+        <option value="2">Business Development</option>
+        <option value="3">Real Estate Business</option>
+        <option value="4">Share Market Analysis</option>
+        <option value="5">Finance & Banking Service</option>
+        <option value="6">IT & Networking Services</option>
+        <option value="7">Restaurant Service</option>
+        <option value="8">Defense & Fire Service</option>
+      </select>
+    </div>
+  </div>
+
+                                <div class="col-md-6">
+                  <div class="form-group first">
+                    <label for="deadline">Deadline</label>
+                    <input type="date" class="form-control" placeholder="" id="lname" name="deadline"  required>
+                  </div>
+                </div>
+              </div>
+</div>
+
+
+
+              <input type="submit" value="Register this Job!" class="btn px-5 btn-primary">
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+
+
+    <script src="static/addjob/js/jquery-3.3.1.min.js"></script>
+    <script src="static/addjob/js/popper.min.js"></script>
+    <script src="static/addjob/js/bootstrap.min.js"></script>
+    <script src="static/addjob/js/main.js"></script>
+  </body>
+</html>
+{% endblock %}

@@ -1,0 +1,124 @@
+{% extends 'seekera/base.html' %}
+{% load static %}
+{% block title %}
+{% endblock %}
+{% block background %} {% endblock %}
+{% block body %}
+
+<!doctype html>
+<html lang="en">
+
+<!-- create-resume41:12-->
+<head>
+	<!-- Basic Page Needs
+	================================================== -->
+	<title>Job Stock - Responsive Job Portal Bootstrap Template</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+	================================================== -->
+	<link rel="stylesheet" href="{% static 'seekera/jobportal/assets/plugins/css/plugins.css' %}">
+
+    <!-- Custom style -->
+    <link href="{% static 'seekera/jobportal/assets/css/style2.css' %}" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" id="jssDefault" href="{% static 'seekera/jobportal/assets/css/colors/blue-style.css' %}">
+
+	</head>
+<style>
+	.detail-pannel-footer-btn a.footer-btn.choose-cover {
+    background: #0d6efd;
+}
+.custom-file-label::after {
+    content: "Browse";
+}
+</style>
+	<body>
+
+			<!-- End Navigation -->
+			<div class="clearfix"></div>
+
+			<!-- Header Title Start -->
+			<section class="inner-header-title blank">
+				<div class="container">
+					<h1>Create Account</h1>
+
+				</div>
+			</section>
+<form method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+
+<div class="detail-desc section">
+    <div class="container white-shadow">
+        <div class="row">
+            <div class="detail-pic js">
+                <div class="box">
+                    <input type="file" name="resume" id="upload-pic" accept=".pdf" class="inputfile" required/>
+                     <label for="upload-pic"><font color="white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Upload<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Resume</font><i class="fa fa-upload" aria-hidden="true"></i><span></span></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="row bottom-mrg">
+            <form class="add-feild">
+
+                <div class="col-md-6 col-sm-6">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Full Name" name="name" pattern="[A-Za-z\s]{1,50}" title="Enter Name In Valid Format (firstname+ +lastname)" required>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-sm-6">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Address" name="address" required>
+                    </div>
+                </div>
+
+
+
+                <div class="col-md-6 col-sm-6">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Phone Number" name="contact" pattern="[6-9]{1}[0-9]{9}"  required title="Phone number with 7-9 and remaing 9 digit with 0-9">
+                    </div>
+                </div>
+
+            <div class="col-md-6 col-sm-6">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Enter your technical skills here..." name="skill" pattern="^[a-zA-Z,]*$" title="Enter Your Skills Separated By Commas" required>
+
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="input-group">
+                        <input type="email" class="form-control" placeholder="Enter your email" name="email" required>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="input-group">
+                        <input type="password" class="form-control" placeholder="Enter your Password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+                    </div>
+
+                </div>
+
+<div class="col-md-6 col-sm-6">
+                    <div class="input-group">
+                        <label class="form-label" for="customFile">Date OF Birth</label>
+                        <input type="date" id="dob" data-lang="en" data-large-mode="true"  data-id="datedropper-0" data-theme="my-style" class="form-control" placeholder="" name="dob" pattern="\d{1,2}/\d{1,2}/\d{4}" required>
+                    </div>
+                </div>
+               <div class="col-md-6 col-sm-6">
+  <div class="custom-file mb-3">
+    <label class="form-label" for="customFile">Upload Your Image In Jpg/Png Format</label>
+<input type="file" class="form-control" id="customFile" name="photo" accept="image/png, image/gif, image/jpeg" required/>
+  </div>
+</div>
+<div class="col-md-12 col-sm-12">
+    <font color="red">{{msg}}</font>
+								<button class="btn btn-success btn-primary small-btn">Submit!!</button>
+							</div>
+            </form>
+        </div>
+
+    </div>
+</div>
+      {% endblock %}
