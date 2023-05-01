@@ -14,7 +14,7 @@
 ## Installation
 ### To install the application, follow these steps:
 
-##### 1. Clone the repository: git clone [https://github.com/animeshthomas/job-grids.git]<br>
+##### 1. Navigate to Terminal (Command Prompt)
 ##### 2. Navigate to the virtual enviroment : venv\Scripts\activate
 ##### 3. Navigate to the project directory: cd seekerp<br>
 ##### 4. Install the required dependencies: pip install -r requirements.txt<br>
