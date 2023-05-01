@@ -21,9 +21,13 @@ Run the development server: python manage.py runserver
 # Usage
 To use the application, open a web browser and navigate to http://localhost:8000/. You should see the home page of the application. From here, you can search for jobs, create an account, and upload your resume.
 
-# Contributing
-Contributions are welcome! If you would like to contribute to the project, please follow these steps:
+# ScreenShots Of Job Grids
+
+![Job Grids Homepage](/screenshots/homepage.png)
+
+## Here's a screenshot of the Job Grids homepage:
 
 # Credits
 This application was created by **Animesh Thomas.**
+
 
