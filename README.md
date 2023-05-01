@@ -15,10 +15,11 @@
 ### To install the application, follow these steps:
 
 ##### 1. Clone the repository: git clone [https://github.com/animeshthomas/job-grids.git]<br>
-##### 2. Navigate to the project directory: cd seekerp<br>
-##### 3. Install the required dependencies: pip install -r requirements.txt<br>
-##### 4. Create the database: python manage.py migrate<br>
-##### 5. Run the development server: python manage.py runserver
+##### 2. Navigate to the virtual enviroment : venv\Scripts\activate
+##### 3. Navigate to the project directory: cd seekerp<br>
+##### 4. Install the required dependencies: pip install -r requirements.txt<br>
+##### 5. Create the database: python manage.py migrate<br>
+##### 6. Run the development server: python manage.py runserver
 
 ## Admin Panel Credentials
 #### username:admin<br>
