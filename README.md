@@ -23,9 +23,11 @@ To use the application, open a web browser and navigate to http://localhost:8000
 
 # ScreenShots Of Job Grids
 
-![Job Grids Homepage](/screenshots/homepage.png)
-
 ## Here's a screenshot of the Job Grids homepage:
+
+![Job Grids Homepage](screenshots/homepage.png)
+
+
 
 # Credits
 This application was created by **Animesh Thomas.**
