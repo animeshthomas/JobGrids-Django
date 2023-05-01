@@ -1,6 +1,6 @@
 # Job Grids
 
-Job Grids is a web application that helps job seekers find job opportunities based on their skills and experience. The application is built using Django in the backend and HTML, Bootstrap, and JavaScript in the frontend.
+  Job Grids is a web application that helps job seekers find job opportunities based on their skills and experience. The application is built using Django in the backend     and HTML, Bootstrap, and JavaScript in the frontend.
 
 # Features
 >Job search based on keywords and location
@@ -12,8 +12,8 @@ Job Grids is a web application that helps job seekers find job opportunities bas
 # Installation
 To install the application, follow these steps:
 
-Clone the repository: git clone https://github.com/yourusername/job-grids.git
-Navigate to the project directory: cd job-grids
+Clone the repository: git clone [https://github.com/yourusername/job-grids.git](https://github.com/animeshthomas/Mini-Project-2nd-Sem/)
+Navigate to the project directory: cd seekerp
 Install the required dependencies: pip install -r requirements.txt
 Create the database: python manage.py migrate
 Run the development server: python manage.py runserver
