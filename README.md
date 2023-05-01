@@ -20,6 +20,11 @@
 ##### 4. Create the database: python manage.py migrate<br>
 ##### 5. Run the development server: python manage.py runserver
 
+## Admin Panel Credentials
+#### username:admin<br>
+#### password:admin
+
+
 ## Usage
 ##### To use the application, open a web browser and navigate to http://localhost:8000/. You should see the home page of the application. From here, you can search for jobs, create an account, and upload your resume.
 
