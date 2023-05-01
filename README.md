@@ -13,7 +13,8 @@
 
 ## Installation
 ### To install the application, follow these steps:
-
+##Download venv folder in this link and paste in root folder(Job-Grids/here).
+###### Link:
 ##### 1. Navigate to Terminal (Command Prompt)
 ##### 2. Navigate to the virtual enviroment : venv\Scripts\activate
 ##### 3. Navigate to the project directory: cd seekerp<br>
