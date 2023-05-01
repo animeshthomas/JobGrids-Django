@@ -2,14 +2,14 @@
 
   Job Grids is a web application that helps job seekers find job opportunities based on their skills and experience. The application is built using Django in the backend     and HTML, Bootstrap, and JavaScript in the frontend.
 
-# Features
+## Features
 ##### # Job search based on keywords and location<br>
 ##### # User registration and login<br>
 ##### # Resume upload and management<br>
 ##### # Job application tracking<br>
 ##### # Job recommendations based on user skills and experience
 
-# Installation
+## Installation
 To install the application, follow these steps:
 
 Clone the repository: git clone [https://github.com/yourusername/job-grids.git](https://github.com/animeshthomas/Mini-Project-2nd-Sem/)
@@ -18,31 +18,32 @@ Install the required dependencies: pip install -r requirements.txt
 Create the database: python manage.py migrate
 Run the development server: python manage.py runserver
 
-# Usage
+## Usage
 To use the application, open a web browser and navigate to http://localhost:8000/. You should see the home page of the application. From here, you can search for jobs, create an account, and upload your resume.
 
-# ScreenShots Of Job Grids
+## ScreenShots Of Job Grids
 
-## Here's a screenshot of the Job Grids Homepage:
+### Here's a screenshot of the Job Grids Homepage:
 
 ![Job Grids Homepage](Screenshots/Home%20Page.png)
 
-## All Jobs Section:
+### All Jobs Section:
 
 ![Job Grids Alljobs](Screenshots/All%20%20Jobs.png)
 
-## Testimonials Section
+### Testimonials Section
 
 ![Job Grids Testimonials](Screenshots/Testimonials.png)
 
-## Login
+### Login
 
 ![Job Grids Login](Screenshots/Login.png)
-## Apply a job
+
+### Apply a job
 
 ![Job Grids Apply](Screenshots/apply.png)
 
-## Job Seeker Home Page
+### Job Seeker Home Page
 
 ![Job Grids UserHome](Screenshots/Job%20Seeker%20Home.png)
 
@@ -53,5 +54,6 @@ To use the application, open a web browser and navigate to http://localhost:8000
 
 # Credits
 This application was created by **Animesh Thomas.**
+For any contact: **animeshthomas262@gmail.com**
 
 
