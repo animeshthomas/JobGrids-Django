@@ -23,10 +23,32 @@ To use the application, open a web browser and navigate to http://localhost:8000
 
 # ScreenShots Of Job Grids
 
-## Here's a screenshot of the Job Grids homepage:
+## Here's a screenshot of the Job Grids Homepage:
 
-![Job Grids Homepage](screenshots/homepage.png)
+![Job Grids Homepage](Screenshots/Home%20Page.png)
 
+## All Jobs Section:
+
+![Job Grids Alljobs](Screenshots/All%20%20Jobs.png)
+
+## Testimonials Section
+
+![Job Grids Testimonials](Screenshots/Testimonials.png)
+
+## Login
+
+![Job Grids Login](Screenshots/Login.png)
+## Apply a job
+
+![Job Grids Apply](Screenshots/apply.png)
+
+## Job Seeker Home Page
+
+![Job Grids UserHome](Screenshots/Job%20Seeker%20Home.png)
+
+## Job Provider Home Page
+
+![Job Grids CompanyHome](Screenshots/Job%20Provider%20Home.png)
 
 
 # Credits
