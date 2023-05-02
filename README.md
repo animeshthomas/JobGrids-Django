@@ -17,8 +17,8 @@
 ###### Link:[https://drive.google.com/drive/folders/144VL-6aaPxhPIaoo7lebQexsQ-5J3Zmc?usp=share_link](https://drive.google.com/drive/folders/1zkTYEvySyVzcWkecIiUCqzpayIclPZzL?usp=share_link)
 ##### 1. Navigate to Terminal (Command Prompt)
 ##### 2. Navigate to the virtual enviroment : venv\Scripts\activate
-##### 3. Navigate to the project directory: cd seekerp<br>
-##### 4. Install the required dependencies: pip install -r requirements.txt<br>
+##### 3. Install the required dependencies: pip install -r requirements.txt<br>
+##### 4. Navigate to the project directory: cd seekerp<br>
 ##### 5. Create the database: python manage.py migrate<br>
 ##### 6. Run the development server: python manage.py runserver
 
