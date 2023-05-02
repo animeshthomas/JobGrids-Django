@@ -15,6 +15,7 @@
 ### To install the application, follow these steps:
 #### Download venv folder in this link and paste in root folder(Job-Grids/here).
 ###### Link:[https://drive.google.com/drive/folders/144VL-6aaPxhPIaoo7lebQexsQ-5J3Zmc?usp=share_link](https://drive.google.com/drive/folders/1zkTYEvySyVzcWkecIiUCqzpayIclPZzL?usp=share_link)
+##### Otherwise you have to create a virtual enviroment by yourself: python -m venv venv(In this case some of the adminpanel customization wo'nt work.)
 ##### 1. Navigate to Terminal (Command Prompt)
 ##### 2. Navigate to the virtual enviroment : venv\Scripts\activate
 ##### 3. Install the required dependencies: pip install -r requirements.txt<br>
