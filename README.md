@@ -1,69 +1,120 @@
-# Job Grids
+# 💼 JobGrids — Modern Django Job Portal & Recruitment System
 
-#####  Job Grids is a web application that helps job seekers find job opportunities based on their skills and experience. The application is built using Django in the backend     and HTML, Bootstrap, and JavaScript in the frontend.
+<p align="center">
+  <img src="https://img.shields.io/badge/Django-4.2%2B-092E20?style=for-the-badge&logo=django&logoColor=white" alt="Django" />
+  <img src="https://img.shields.io/badge/Python-3.11%2B-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
+  <img src="https://img.shields.io/badge/Admin_Volt-Bootstrap_5-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Admin Volt" />
+  <img src="https://img.shields.io/badge/Glassmorphism-CSS3-00F2FE?style=for-the-badge" alt="Glassmorphism" />
+  <img src="https://img.shields.io/badge/Deployment-Render-46E3B7?style=for-the-badge&logo=render&logoColor=black" alt="Render" />
+  <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License" />
+</p>
 
-## Features
-##### # Job search based on keywords and location<br>
-##### # User registration and login<br>
-##### # Resume upload and management<br>
-##### # Job application tracking<br>
-##### # Job recommendations 
-##### # Add Reviews About JobGrids
-##### # Customized Django Admin Panel
+> **JobGrids** is a full-stack, enterprise-grade job portal and recruitment management platform powered by **Django** and a modern **Dark Glassmorphism UI**. Features multi-tenant portals for **Job Seekers**, **Job Providers (Employers)**, and **Super Admins** (`django-admin-volt`).
 
-## Installation
-### To install the application, follow these steps:
-#### Download venv folder in this link and paste in root folder(Job-Grids/here).
-###### Link:[https://drive.google.com/drive/folders/144VL-6aaPxhPIaoo7lebQexsQ-5J3Zmc?usp=share_link](https://drive.google.com/drive/folders/1zkTYEvySyVzcWkecIiUCqzpayIclPZzL?usp=share_link)
-##### Otherwise you have to create a virtual enviroment by yourself: python -m venv venv(In this case some of the adminpanel customization wo'nt work.)
-##### 1. Navigate to Terminal (Command Prompt)
-##### 2. Navigate to the virtual enviroment : venv\Scripts\activate
-##### 3. Install the required dependencies: pip install -r requirements.txt<br>
-##### 4. Navigate to the project directory: cd seekerp<br>
-##### 5. Create the database: python manage.py migrate<br>
-##### 6. Run the development server: python manage.py runserver
+🌐 **Live Production Deployment**: [https://jobgrids-django.onrender.com/](https://jobgrids-django.onrender.com/) *(Or deploy your own in 1 click!)*
 
-## Admin Panel Credentials
-#### username:admin<br>
-#### password:admin
+---
 
+## ✨ Key Features
 
-## Usage
-##### To use the application, open a web browser and navigate to http://localhost:8000/. You should see the home page of the application. From here, you can search for jobs, create an account, and upload your resume.
+- **🎨 Modern Dark Glassmorphism UI System**: High-impact hero section, glowing search cards, salary badges, and job-type pills (*Full-time, Remote, Contract*).
+- **👔 Dual Portal Portfolios**:
+  - **Job Seeker Portal**: Resume creator, 1-click application tracking, status updates, and review submission.
+  - **Job Provider (Employer) Portal**: Company profile management, job posting creation, applicant review, and candidate selection.
+- **⚡ Admin Volt Management Dashboard**: Customized Bootstrap 5 admin dashboard (`/admin/`) for company verification, job approvals, and site analytics.
+- **🔍 Advanced Search & Filtering**: Instant search across keywords, job categories, locations, and salary packages.
+- **☁️ Cloud & Production Ready**: Pre-configured with **WhiteNoise** static asset handling and **Gunicorn** WSGI execution for 1-click deployment on **Render** or **Vercel**.
 
-## ScreenShots Of Job Grids
+---
 
-### Here's a screenshot of the Job Grids Homepage:
+## 🔑 Pre-Configured Test User Credentials
 
-![Job Grids Homepage](Screenshots/Home%20Page.png)
+### 1. 🛡️ Super Admin Panel (`/admin/`)
+| Role | Username | Email | Password |
+| :--- | :--- | :--- | :--- |
+| **Superuser Admin** | `admin` | `admin@jobgrid.com` | `admin123` |
+| **Staff Admin** | `admin2` | `animeshthomas@gmail.com` | `admin123` |
 
-### All Jobs Section:
+### 2. 🏢 Job Provider (Employer) Accounts
+| Company Name | Login Email | Password | Verification Status |
+| :--- | :--- | :--- | :--- |
+| **Google** | `google@gmail.com` | `google` | ✅ Verified |
+| **Amazon Web Services (AWS)** | `aws@gmail.com` | `aws` | ✅ Verified |
+| **Open AI** | `openai@gmail.com` | `Openai@123` | ✅ Verified |
+| **TCS** | `tcs@gmail.com` | `Tcs@1234` | ✅ Verified |
+| **Accenture** | `accenture@gmail.com` | `accenture` | ✅ Verified |
+| **Cognizant (CTS)** | `cts@gmail.com` | `cts` | ✅ Verified |
 
-![Job Grids Alljobs](Screenshots/All%20%20Jobs.png)
+### 3. 👤 Job Seeker Accounts
+| Candidate Name | Login Email | Password | Account Type |
+| :--- | :--- | :--- | :--- |
+| **Animesh Thomas** | `animesh@gmail.com` | `animesh` | Candidate / Seeker |
+| **Animesh Kurian Thomas** | `ani@gmail.com` | `ani45678` | Candidate / Seeker |
+| **Thomas Mathew** | `thomas@gmail.com` | `Thomas@124` | Candidate / Seeker |
+| **Aleesha Jaleel** | `aleesha@gmail.com` | `Aleesha@` | Candidate / Seeker |
 
-### Testimonials Section
+---
 
-![Job Grids Testimonials](Screenshots/Testimonials.png)
+## 🚀 Quick Start (Local Setup)
 
-### Login
+### 1. Clone the Repository
+```bash
+git clone https://github.com/animeshthomas/JobGrids-Django.git
+cd JobGrids-Django
+```
 
-![Job Grids Login](Screenshots/Login.png)
+### 2. Install Dependencies
+```bash
+pip install -r requirements.txt
+```
 
-### Apply a job
+### 3. Run Database Migrations & Start Server
+```bash
+cd seekerp
+python manage.py migrate
+python manage.py runserver
+```
 
-![Job Grids Apply](Screenshots/apply.png)
+Open **`http://127.0.0.1:8000`** in your browser!
 
-### Job Seeker Home Page
+---
 
-![Job Grids UserHome](Screenshots/Job%20Seeker%20Home.png)
+## ☁️ Deployment Guide
 
-## Job Provider Home Page
+### Deploying to Render (Recommended)
+1. Log in to [Render.com](https://render.com) and click **New +** ➔ **Web Service**.
+2. Connect this repository: **`animeshthomas/JobGrids-Django`**.
+3. Configure settings:
+   - **Root Directory**: `seekerp`
+   - **Environment**: `Python 3`
+   - **Build Command**:
+     ```bash
+     pip install -r ../requirements.txt && python manage.py collectstatic --noinput && python manage.py migrate
+     ```
+   - **Start Command**:
+     ```bash
+     gunicorn seekerp.wsgi:application
+     ```
 
-![Job Grids CompanyHome](Screenshots/Job%20Provider%20Home.png)
+### Deploying to Vercel
+1. Import repository on [Vercel.com](https://vercel.com).
+2. Set **Root Directory** to `seekerp`.
+3. Vercel will process `vercel.json` automatically!
 
+---
 
-# Credits
-This application was created by **Animesh Thomas.**
-##### For any contact: **animeshthomas262@gmail.com**
+## 📸 Screenshots
 
+| Homepage | All Jobs Section |
+| :---: | :---: |
+| ![Homepage](Screenshots/Home%20Page.png) | ![All Jobs](Screenshots/All%20%20Jobs.png) |
 
+| Testimonials | Candidate Application |
+| :---: | :---: |
+| ![Testimonials](Screenshots/Testimonials.png) | ![Apply Job](Screenshots/apply.png) |
+
+---
+
+## 📄 License & Credits
+
+Created with ❤️ by **[Animesh Thomas](https://github.com/animeshthomas)**. Distributed under the MIT License.
