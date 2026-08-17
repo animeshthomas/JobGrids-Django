@@ -30,10 +30,8 @@
 ## 🔑 Pre-Configured Test User Credentials
 
 ### 1. 🛡️ Super Admin Panel (`/admin/`)
-| Role | Username | Email | Password |
-| :--- | :--- | :--- | :--- |
-| **Superuser Admin** | `admin` | `admin@jobgrid.com` | `admin123` |
-| **Staff Admin** | `admin2` | `animeshthomas@gmail.com` | `admin123` |
+* **Admin Login Route**: `/admin/`
+* *Access superuser management via `python manage.py createsuperuser` or environment credentials.*
 
 ### 2. 🏢 Job Provider (Employer) Accounts
 | Company Name | Login Email | Password | Verification Status |
