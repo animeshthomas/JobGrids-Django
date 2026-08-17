@@ -1,9 +1,5 @@
-asgiref==3.6.0
-bootstrap-admin==0.4.4
-Django==4.2
-django-admin-volt==1.0.9
-django-jasmine==0.5.1
-django-jazzmin==2.6.0
-Pillow==9.4.0
-sqlparse==0.4.3
-tzdata==2022.7
+django>=4.2.0
+gunicorn>=21.2.0
+whitenoise>=6.5.0
+pillow>=10.0.0
+django-admin-volt>=0.0.8
