@@ -1,4 +1,4 @@
-/* JobGrids - Modern High-End Job Portal Glassmorphism CSS System */
+/* JobGrids - Comprehensive Modern Dark Glassmorphism Design System Across All Pages */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
 
@@ -8,208 +8,254 @@
     --accent-cyan: #06B6D4;
     --accent-emerald: #10B981;
     --accent-amber: #F59E0B;
+    --accent-rose: #F43F5E;
+    
     --bg-dark: #0B0F19;
-    --bg-card: rgba(23, 31, 48, 0.75);
+    --bg-card: rgba(23, 31, 48, 0.78);
+    --bg-card-solid: #171F30;
     --border-glass: rgba(255, 255, 255, 0.1);
+    
     --text-primary: #F3F4F6;
     --text-secondary: #9CA3AF;
+    --text-muted: #6B7280;
+    
     --font-heading: 'Plus Jakarta Sans', sans-serif;
     --font-body: 'Inter', sans-serif;
+    
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    
+    --shadow-card: 0 12px 35px rgba(0, 0, 0, 0.5);
+    --shadow-glow: 0 0 30px rgba(79, 70, 229, 0.2);
 }
 
 body {
-    font-family: var(--font-body);
-    color: var(--text-primary);
-    background-color: var(--bg-dark);
+    font-family: var(--font-body) !important;
+    color: var(--text-primary) !important;
+    background-color: var(--bg-dark) !important;
     background-image: 
-        radial-gradient(at 10% 10%, rgba(79, 70, 229, 0.12) 0px, transparent 50%),
-        radial-gradient(at 90% 90%, rgba(6, 182, 212, 0.08) 0px, transparent 50%);
-    background-attachment: fixed;
+        radial-gradient(at 10% 10%, rgba(79, 70, 229, 0.14) 0px, transparent 50%),
+        radial-gradient(at 90% 90%, rgba(6, 182, 212, 0.1) 0px, transparent 50%) !important;
+    background-attachment: fixed !important;
 }
 
-/* Header & Navbar Styling */
-.header {
-    background: rgba(11, 15, 25, 0.85) !important;
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border-bottom: 1px solid var(--border-glass);
-    position: sticky;
-    top: 0;
-    z-index: 999;
+/* Typography Overrides */
+h1, h2, h3, h4, h5, h6, .title {
+    font-family: var(--font-heading) !important;
+    color: var(--text-primary) !important;
+    letter-spacing: -0.02em;
 }
 
-.navbar-brand img {
-    height: 40px;
+p, span, label, td, th {
+    color: var(--text-secondary);
+}
+
+/* Header & Navigation Bar */
+.header, .navbar-area, .site-navbar {
+    background: rgba(11, 15, 25, 0.88) !important;
+    backdrop-filter: blur(18px) !important;
+    -webkit-backdrop-filter: blur(18px) !important;
+    border-bottom: 1px solid var(--border-glass) !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 999 !important;
+}
+
+.navbar-brand img, .logo img {
+    height: 42px !important;
     filter: drop-shadow(0 0 10px rgba(79, 70, 229, 0.5));
 }
 
-.navbar-nav .nav-item a {
+.navbar-nav .nav-item a, .site-menu > li > a {
     font-family: var(--font-heading) !important;
-    font-size: 0.92rem !important;
+    font-size: 0.94rem !important;
     font-weight: 600 !important;
     color: var(--text-secondary) !important;
-    padding: 22px 14px !important;
+    padding: 20px 16px !important;
     transition: all 0.2s ease !important;
 }
 
-.navbar-nav .nav-item a:hover, .navbar-nav .nav-item a.active {
+.navbar-nav .nav-item a:hover, .navbar-nav .nav-item a.active, .site-menu > li > a:hover {
     color: var(--primary-indigo) !important;
 }
 
-/* Modern Hero Section */
-.hero-area {
-    padding: 100px 0 80px 0;
-    position: relative;
-    overflow: hidden;
-}
-
-.hero-content h1 {
-    font-family: var(--font-heading);
-    font-size: 3.2rem;
-    font-weight: 800;
-    letter-spacing: -0.02em;
-    line-height: 1.25;
-    background: linear-gradient(135deg, #FFFFFF 30%, var(--accent-cyan));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 20px;
-}
-
-.hero-content p {
-    font-size: 1.1rem;
-    color: var(--text-secondary);
-    max-width: 620px;
-    margin-bottom: 36px;
-}
-
-/* Modern Glass Search Card */
-.job-search-form {
-    background: var(--bg-card) !important;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+/* Modern Form Cards & Inputs across ALL pages */
+.form-control, .form-select, input[type="text"], input[type="email"], input[type="password"], input[type="number"], input[type="date"], select, textarea {
+    background: rgba(15, 22, 36, 0.85) !important;
     border: 1px solid var(--border-glass) !important;
-    border-radius: 24px !important;
-    padding: 16px 24px !important;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 25px rgba(79, 70, 229, 0.15) !important;
-}
-
-.job-search-form .single-field {
-    border-right: 1px solid var(--border-glass);
-    padding-right: 16px;
-}
-
-.job-search-form input, .job-search-form select {
-    background: transparent !important;
-    border: none !important;
-    color: #FFFFFF !important;
-    font-size: 0.95rem !important;
+    color: var(--text-primary) !important;
+    border-radius: var(--radius-sm) !important;
+    padding: 12px 18px !important;
+    font-size: 0.92rem !important;
+    font-family: var(--font-body) !important;
     outline: none !important;
+    transition: all 0.2s ease !important;
 }
 
-.job-search-form .btn {
+.form-control:focus, input:focus, select:focus, textarea:focus {
+    border-color: var(--primary-indigo) !important;
+    box-shadow: 0 0 15px rgba(79, 70, 229, 0.3) !important;
+    background: rgba(23, 31, 48, 0.95) !important;
+}
+
+label, .form-label {
+    font-family: var(--font-heading) !important;
+    font-size: 0.88rem !important;
+    font-weight: 600 !important;
+    color: var(--text-secondary) !important;
+    margin-bottom: 8px !important;
+}
+
+/* Buttons System */
+.btn, button, input[type="submit"] {
+    border-radius: var(--radius-sm) !important;
+    font-family: var(--font-heading) !important;
+    font-weight: 700 !important;
+    font-size: 0.9rem !important;
+    padding: 12px 24px !important;
+    transition: all 0.25s ease !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+}
+
+.btn-primary, .btn-main, .button .btn {
     background: linear-gradient(135deg, var(--primary-indigo), var(--accent-cyan)) !important;
     color: #FFFFFF !important;
-    border-radius: 16px !important;
-    font-weight: 700 !important;
-    padding: 14px 32px !important;
-    box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4) !important;
-    transition: all 0.25s ease !important;
+    border: none !important;
+    box-shadow: 0 6px 20px rgba(79, 70, 229, 0.35) !important;
 }
 
-.job-search-form .btn:hover {
+.btn-primary:hover, .btn-main:hover {
     transform: translateY(-2px) !important;
-    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.6) !important;
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.55) !important;
 }
 
-/* Job Listing Cards */
-.single-job {
-    background: var(--bg-card) !important;
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+.btn-secondary, .btn-outline {
+    background: rgba(255, 255, 255, 0.05) !important;
+    color: var(--text-primary) !important;
     border: 1px solid var(--border-glass) !important;
-    border-radius: 20px !important;
-    padding: 24px !important;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
-    transition: all 0.3s ease !important;
-    margin-bottom: 24px;
 }
 
-.single-job:hover {
-    transform: translateY(-6px) !important;
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.12) !important;
+    border-color: var(--primary-indigo) !important;
+}
+
+/* Glassmorphism Containers & Cards */
+.card, .single-job, .single-category, .testimonial-item, .box, .block-23, .job-post-item, .company-card, .search-form-card {
+    background: var(--bg-card) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    border: 1px solid var(--border-glass) !important;
+    border-radius: var(--radius-md) !important;
+    padding: 24px !important;
+    box-shadow: var(--shadow-card) !important;
+    transition: transform 0.3s ease, border-color 0.3s ease !important;
+}
+
+.card:hover, .single-job:hover, .single-category:hover, .job-post-item:hover {
+    transform: translateY(-5px) !important;
     border-color: var(--primary-indigo) !important;
     box-shadow: 0 15px 40px rgba(79, 70, 229, 0.25) !important;
 }
 
-.job-title {
+/* Job Status & Type Badges */
+.job-type-pill, .badge-status, .tag {
     font-family: var(--font-heading);
-    font-size: 1.25rem;
+    font-size: 0.75rem;
     font-weight: 700;
-    color: #FFFFFF;
-    margin-bottom: 8px;
-}
-
-.job-title a {
-    color: #FFFFFF !important;
-    transition: color 0.2s ease;
-}
-
-.job-title a:hover {
-    color: var(--accent-cyan) !important;
-}
-
-/* Badges & Tags */
-.job-type-pill {
-    font-size: 0.76rem;
-    font-weight: 700;
-    padding: 4px 12px;
+    padding: 5px 14px;
     border-radius: 20px;
     text-transform: uppercase;
     letter-spacing: 0.04em;
     display: inline-block;
 }
 
-.job-type-pill.full-time {
-    background: rgba(16, 185, 129, 0.15);
-    color: var(--accent-emerald);
-    border: 1px solid rgba(16, 185, 129, 0.3);
+.badge-verified, .job-type-pill.full-time {
+    background: rgba(16, 185, 129, 0.15) !important;
+    color: var(--accent-emerald) !important;
+    border: 1px solid rgba(16, 185, 129, 0.3) !important;
 }
 
-.job-type-pill.part-time {
-    background: rgba(245, 158, 11, 0.15);
-    color: var(--accent-amber);
-    border: 1px solid rgba(245, 158, 11, 0.3);
+.badge-pending, .job-type-pill.part-time {
+    background: rgba(245, 158, 11, 0.15) !important;
+    color: var(--accent-amber) !important;
+    border: 1px solid rgba(245, 158, 11, 0.3) !important;
 }
 
-.job-type-pill.remote {
-    background: rgba(6, 182, 212, 0.15);
-    color: var(--accent-cyan);
-    border: 1px solid rgba(6, 182, 212, 0.3);
+.badge-remote, .job-type-pill.remote {
+    background: rgba(6, 182, 212, 0.15) !important;
+    color: var(--accent-cyan) !important;
+    border: 1px solid rgba(6, 182, 212, 0.3) !important;
 }
 
-.salary-badge {
-    font-family: var(--font-heading);
-    font-weight: 700;
-    font-size: 1.05rem;
-    color: var(--accent-emerald);
+/* Tables across Dashboard & Management Pages */
+.table, table {
+    width: 100% !important;
+    background: transparent !important;
+    border-collapse: separate !important;
+    border-spacing: 0 8px !important;
 }
 
-/* Modal Dialog Glassmorphism Overrides */
+.table th, table th {
+    background: rgba(15, 22, 36, 0.9) !important;
+    font-family: var(--font-heading) !important;
+    font-size: 0.85rem !important;
+    font-weight: 700 !important;
+    color: var(--text-secondary) !important;
+    text-transform: uppercase !important;
+    padding: 14px 18px !important;
+    border: none !important;
+}
+
+.table td, table td {
+    background: var(--bg-card-solid) !important;
+    color: var(--text-primary) !important;
+    padding: 14px 18px !important;
+    border-top: 1px solid var(--border-glass) !important;
+    border-bottom: 1px solid var(--border-glass) !important;
+    font-size: 0.9rem !important;
+}
+
+.table tr td:first-child {
+    border-left: 1px solid var(--border-glass) !important;
+    border-radius: var(--radius-sm) 0 0 var(--radius-sm) !important;
+}
+
+.table tr td:last-child {
+    border-right: 1px solid var(--border-glass) !important;
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0 !important;
+}
+
+.table tr:hover td {
+    background: rgba(79, 70, 229, 0.08) !important;
+}
+
+/* Modals & Dialogs */
 .modal-content {
-    background: #131A2A !important;
+    background: #111726 !important;
     border: 1px solid var(--border-glass) !important;
-    border-radius: 24px !important;
-    color: #FFFFFF !important;
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8) !important;
+    border-radius: var(--radius-lg) !important;
+    padding: 24px !important;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85) !important;
 }
 
-.modal-content input, .modal-content textarea, .modal-content select {
-    background: rgba(255, 255, 255, 0.05) !important;
-    border: 1px solid var(--border-glass) !important;
-    color: #FFFFFF !important;
-    border-radius: 12px !important;
-    padding: 12px 16px !important;
+/* Footer Section */
+footer, .footer {
+    background: rgba(11, 15, 25, 0.95) !important;
+    border-top: 1px solid var(--border-glass) !important;
+    padding: 60px 0 30px 0 !important;
+    margin-top: 60px !important;
 }
 
-.modal-content input:focus {
-    border-color: var(--primary-indigo) !important;
+.footer a {
+    color: var(--text-secondary) !important;
+    transition: color 0.2s ease !important;
+}
+
+.footer a:hover {
+    color: var(--primary-indigo) !important;
 }
